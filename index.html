@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Firebase Demo</title>
+   
+    <!--CDN de CSS Boostrap-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+     <!--Link de CSS-->
+     <link rel="stylesheet" href="./css/main.css">
+  </head>
+  <body>
+    <!--Menu de Boostrap-->
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Mi web</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link active" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#signinModal">Login</a>
+            
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!--Modal SignUp-->
+
+    <div class="modal" tabindex="-1" id="signupModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Registarse</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-5">
+                <form id="signup-form">
+                    <div class="mb-3">
+                      <label for="email" >Email: </label>
+                      <input type="text" id="signup-email" class="form-control mb-3" placeholder="Email" required>
+           
+                    </div>
+                    <div class="mb-3">
+                      <label for="password"  >Password:</label>
+                      <input type="password" id="signup-password"class="form-control mb-3" placeholder="Password" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                  </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Modal SignIn-->
+
+    <div class="modal" tabindex="-1" id="signinModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Inicio de Sesion</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="login-form">
+                    <div class="mb-3">
+                      <label for="email">Email: </label>
+                      <input type="text" id="login-email" class="form-control mb-3" placeholder="Correo" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="password">Password:</label>
+                      <input type="password" id="login-password" class="form-control mb-3" placeholder="Password" required >
+                    </div>
+                  
+                    <button type="submit" class="btn btn-success w-100 mb-4">Login</button>
+                  </form>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+    <!--CDN de JS Boostrap-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <!--JS de main-->
+    <script type="module" src="./main.js"></script>
+   
+  </body>
+</html>
