@@ -6,7 +6,7 @@ import '../js/signUpForm.js'
 import '../js/signInForm.js'
 import '../js/logout.js'
 
-import {saveTask, deleteTask, getTask} from './js/firebase.js'
+import {saveTask, deleteTask, getTask, updateTask} from './js/firebase.js'
 
 let editStatus = false;
 let id = "";
@@ -17,8 +17,6 @@ onAuthStateChanged(auth, async(user) => {
       const correo = user.email;
       console.log(correo);
     try {
-
-        
         // Ingresar el titulo, descripcion de la tarea a Firestore
         const taskForm = document.getElementById("task-form")
         taskForm.addEventListener("submit", (e) => {
@@ -26,8 +24,20 @@ onAuthStateChanged(auth, async(user) => {
         const titulo = taskForm["task-title"]
         const descripcion = taskForm["task-description"]
         //console.log(titulo.value, descripcion.value)
-        saveTask(titulo.value, descripcion.value)
+    
+        if (editStatus) {
+            updateTask(id, {
+                titulo: titulo.value,
+                descripcion: descripcion.value,
+            });
 
+            editStatus = false;
+            id = "";
+            taskForm['btn-task-form'].innerText = "Guardar";
+        
+        } else {
+            saveTask(titulo.value, descripcion.value)
+        }
         taskForm.reset();
         
     
